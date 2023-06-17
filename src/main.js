@@ -1,7 +1,11 @@
-async function hello() {
-    console.log("Hello 1");
+async function sum(n1, n2) {
+    // ...
+    return n1 + n2;
   }
   
-  console.log("Hello 1");
-  hello();
-  console.log("Hello 3");
+  async function main() {
+    let result = await sum(1, 1);
+    console.log(result);
+  }
+  
+  main();
