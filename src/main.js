@@ -1,4 +1,4 @@
- async function hello() {
+async function hello() {
     console.log("Hello 1");
   }
   
