@@ -1,13 +1,17 @@
-import { readFile } from "node:fs/promises";
+import { MongoClient } from "mongodb";
 
 async function main() {
-  try {
-    let filePath ="C:\Users\Shubham\Desktop\Cdac Kh WPT  SM Data\day9\package.json" ;
-    let fileData = await readFile(filePath, { encoding: "utf8" });
-    console.log(fileData);
-  } catch (e) {
-    console.log("Exception Occured :: ", e.message);
-  }
+  const uri = "mongodb://localhost:27017";
+  const client = new MongoClient(uri);
+
+  // Executing the Query
+  const db = client.db("mydb");
+  const messageColl = db.collection("message");
+  await messageColl.insertOne({ message: "HI I am Node!" });
+
+  // closing conn.
+  await client.close();
+  console.log("Record Added!");
 }
 
 main();
