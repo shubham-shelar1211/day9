@@ -1,11 +1,12 @@
-// How to write a file using NodeJS?
-// this is a internal module.
-import { readFileSync, writeFileSync } from "node:fs";
+console.log("Hello 1");
+console.log("Hello 2");
 
-let filePath = "C:\Users\Shubham\Desktop\Cdac Kh WPT  SM Data\day9\output.txt";
-let data = `Similar to the above fs.readSync function, 
-            this version takes an optional options object. 
-            If no options object is specified, it will 
-            default with the above values.`;
-writeFileSync(filePath, data);
-console.log("Write Success!!");
+// is it blocking the next two stament ?
+// this is non blocking
+// non blocking helps to achive async prog
+setTimeout(() => {
+  console.log("Hello 3");
+}, 0);
+
+console.log("Hello 4");
+console.log("Hello 5");
